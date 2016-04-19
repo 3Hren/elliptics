@@ -205,7 +205,7 @@ void elliptics_storage_t::write(const std::string &collection,
 
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"write finished: %s",
+		"write finished: {}",
 		result.error().message()
 	);
 
@@ -242,7 +242,7 @@ ell::async_read_result elliptics_storage_t::async_read(const std::string &collec
 
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"reading the '%s' object, collection: '%s'",
+		"reading the '{}' object, collection: '{}'",
 		key,
 		collection
 	);
@@ -260,7 +260,7 @@ ell::async_read_result elliptics_storage_t::async_read_latest(const std::string 
 
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"reading the '%s' object, collection: '%s'",
+		"reading the '{}' object, collection: '{}'",
 		key,
 		collection
 	);
@@ -279,7 +279,7 @@ static void on_adding_index_finished(const elliptics_storage_t::log_ptr &log,
 	if (err) {
 		COCAINE_LOG_DEBUG(
 			log,
-			"index adding failed: %s",
+			"index adding failed: {}",
 			err.message()
 		);
 	} else {
@@ -304,7 +304,7 @@ static void on_write_finished(const elliptics_storage_t::log_ptr &log,
 	if (err) {
 		COCAINE_LOG_DEBUG(
 			log,
-			"write failed: %s",
+			"write failed: {}",
 			err.message()
 		);
 		handler.complete(err);
@@ -332,7 +332,7 @@ ell::async_write_result elliptics_storage_t::async_write(const std::string &coll
 
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"writing the '%s' object, collection: '%s'",
+		"writing the '{}' object, collection: '{}'",
 		key,
 		collection
 	);
@@ -361,7 +361,7 @@ ell::async_find_indexes_result elliptics_storage_t::async_find(const std::string
 {
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"listing collection: '%s'",
+		"listing collection: '{}'",
 		collection
 	);
 	using namespace std::placeholders;
@@ -395,7 +395,7 @@ ell::async_remove_result elliptics_storage_t::async_remove(const std::string &co
 
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"removing the '%s' object, collection: '%s'",
+		"removing the '{}' object, collection: '{}'",
 		key,
 		collection
 	);
@@ -421,7 +421,7 @@ ioremap::elliptics::async_read_result elliptics_storage_t::async_cache_read(cons
 {
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"cache reading the '%s' object, collection: '%s'",
+		"cache reading the '{}' object, collection: '{}'",
 		key,
 		collection
 	);
@@ -439,7 +439,7 @@ ioremap::elliptics::async_write_result elliptics_storage_t::async_cache_write(co
 {
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"cache writing the '%s' object, collection: '%s'",
+		"cache writing the '{}' object, collection: '{}'",
 		key,
 		collection
 	);
@@ -458,7 +458,7 @@ std::pair<ioremap::elliptics::async_read_result, elliptics_storage_t::key_name_m
 {
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"bulk reading, collection: '%s'",
+		"bulk reading, collection: '{}'",
 		collection
 	);
 
@@ -482,7 +482,7 @@ ioremap::elliptics::async_write_result elliptics_storage_t::async_bulk_write(con
 {
 	COCAINE_LOG_DEBUG(
 		m_log,
-		"bulk writing, collection: '%s'",
+		"bulk writing, collection: '{}'",
 		collection
 	);
 
