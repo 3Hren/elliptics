@@ -22,6 +22,10 @@
 #include "storage.hpp"
 #include "service.hpp"
 
+#include <cocaine/repository.hpp>
+#include <cocaine/repository/service.hpp>
+#include <cocaine/repository/storage.hpp>
+
 using namespace cocaine;
 using namespace cocaine::storage;
 

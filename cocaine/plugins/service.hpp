@@ -170,7 +170,7 @@ private:
 
 	// NOTE: This will keep the underlying storage active, as opposed to the usual usecase when
 	// the storage object is destroyed after the node service finishes its initialization.
-	api::category_traits<api::storage_t>::ptr_type m_storage;
+	api::storage_ptr m_storage;
 	storage::elliptics_storage_t *m_elliptics;
 };
 

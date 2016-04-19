@@ -21,6 +21,7 @@
 #include "storage.hpp"
 
 #include <cocaine/context.hpp>
+#include <cocaine/dynamic.hpp>
 #include <cocaine/logging.hpp>
 
 #include <blackhole/formatter/string.hpp>
