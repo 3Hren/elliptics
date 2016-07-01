@@ -808,7 +808,7 @@ elliptics (2.26.1.0) unstable; urgency=low
 elliptics (2.26.0.4) unstable; urgency=low
 
   * library: Fixed race of creating dht states
-  * 
+  *
 
  -- Ruslan Nigmatullin <euroelessar@yandex.ru>  Sun, 03 Aug 2014 19:43:51 +0400
 
@@ -819,7 +819,7 @@ elliptics (2.26.0.3) unstable; urgency=low
   * library: Reimplemented reconnection thread
   * * Now it makes reconnection and route list requests simultaneously, which gradually decreasis time of this operations with low-latency network
   * net: Removed autodiscovery support
-  * 
+  *
 
  -- Ruslan Nigmatullin <euroelessar@yandex.ru>  Sun, 03 Aug 2014 03:50:01 +0400
 
@@ -999,7 +999,7 @@ elliptics (2.25.4.18) unstable; urgency=low
   * client: Introduced merge_indexes method
   * tests: Docs for test_index_metadata added
   * index: More docs for get_index_metadata helper function
-  * 
+  *
 
  -- Evgeniy Polyakov <zbr@ioremap.net>  Mon, 23 Jun 2014 18:09:46 +0400
 
@@ -1127,7 +1127,7 @@ elliptics (2.25.4.7) unstable; urgency=low
 
 elliptics (2.25.4.6-1) unstable; urgency=low
 
-  * 
+  *
   * Fixed package details
 
  -- Ruslan Nigmatullin <euroelessar@yandex.ru>  Fri, 25 Apr 2014 16:03:10 +0400
@@ -1548,7 +1548,7 @@ elliptics (2.24.14.22) unstable; urgency=low
   * Python: provided python level log based on logging.
   * Cpp: Extended comments and notes about write_prepare, write_plain and write_commit.
   * Cpp: fixed write_data by chunks.
-  * Relicense Elliptics under LGPL 
+  * Relicense Elliptics under LGPL
 
  -- Evgeniy Polyakov <zbr@ioremap.net>  Wed, 13 Nov 2013 00:39:05 +0400
 
@@ -2482,7 +2482,7 @@ elliptics (2.23.6.0) unstable; urgency=low
   *  Only return wait error (usually -ETIMEOUT/-110) if wait internal
   *  status (assigned in write completion handler) was set to something
   *  except -ENXIO.
-  *     
+  *
   *  -ENXIO is set by default and means no transactions were sent
   * dnet_schedule_io() should wakeup only one thread when new packet has been queued
 
@@ -2720,7 +2720,7 @@ elliptics (2.22.0.0) unstable; urgency=low
   * Added logical route groups to support multiple addresses in config.
   * Do not try to initialize srw if no config specified. Otherwise fail whole node initialization if srw init failed.
   * Send discovery at startup
-  * Use bp=boost::python namespace 
+  * Use bp=boost::python namespace
 
  -- Evgeniy Polyakov <zbr@ioremap.net>  Mon, 04 Mar 2013 21:49:27 +0400
 

@@ -70,13 +70,13 @@ static auto convert(logging::priorities priority) -> dnet_log_level {
 class frontend_t : public blackhole::base_frontend_t {
 	std::shared_ptr<logging::logger_t> log;
 	elliptics::log_level severity;
-	blackhole::formatter::string_t formatter;
+	std::unique_ptr<blackhole::formatter_t> formatter;
 
 public:
 	frontend_t(std::shared_ptr<logging::logger_t> log, elliptics::log_level severity) :
 		log(std::move(log)),
 		severity(severity),
-		formatter("%(message)s %(...::)s")
+		formatter(blackhole::builder<blackhole::formatter::string_t>("%(message)s %(...::)s").build())
 	{}
 
 	virtual void handle(const blackhole::log::record_t& record) {
@@ -88,7 +88,7 @@ public:
 
 	    const auto mapped = convert(level);
 
-		log->log(static_cast<int>(level), formatter.format(record));
+		log->log(static_cast<int>(level), formatter->format(record));
 	}
 };
 
