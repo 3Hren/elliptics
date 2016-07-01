@@ -24,7 +24,6 @@
 #include <cocaine/dynamic.hpp>
 #include <cocaine/logging.hpp>
 
-#include <blackhole/formatter.hpp>
 #include <blackhole/formatter/string.hpp>
 #include <blackhole/v1/attribute.hpp>
 #include <blackhole/v1/logger.hpp>
@@ -71,13 +70,13 @@ static auto convert(logging::priorities priority) -> dnet_log_level {
 class frontend_t : public blackhole::base_frontend_t {
 	std::shared_ptr<logging::logger_t> log;
 	elliptics::log_level severity;
-	std::unique_ptr<blackhole::formatter_t> formatter;
+	blackhole::formatter::string_t formatter;
 
 public:
 	frontend_t(std::shared_ptr<logging::logger_t> log, elliptics::log_level severity) :
 		log(std::move(log)),
 		severity(severity),
-		formatter(blackhole::builder<blackhole::formatter::string_t>("%(message)s %(...::)s").build())
+		formatter("%(message)s %(...::)s")
 	{}
 
 	virtual void handle(const blackhole::log::record_t& record) {
@@ -89,7 +88,7 @@ public:
 
 	    const auto mapped = convert(level);
 
-		log->log(static_cast<int>(level), formatter->format(record));
+		log->log(static_cast<int>(level), formatter.format(record));
 	}
 };
 
