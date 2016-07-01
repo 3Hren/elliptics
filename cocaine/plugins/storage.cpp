@@ -24,6 +24,7 @@
 #include <cocaine/dynamic.hpp>
 #include <cocaine/logging.hpp>
 
+#include <blackhole/formatter.hpp>
 #include <blackhole/formatter/string.hpp>
 #include <blackhole/v1/attribute.hpp>
 #include <blackhole/v1/logger.hpp>
